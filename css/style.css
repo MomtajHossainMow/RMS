@@ -1,0 +1,232 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+*
+{
+    top: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: whitesmoke;
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+.hierarchical_bar{
+    display: block;
+    background-color: rgb(5, 201, 80);
+    font-size: 20px;
+    text-align: center;
+    position: sticky;
+    padding: 15 px;
+}
+.hierarchical_bar ul{
+    top: 0;
+    display: inline-flex;
+    list-style-type: none;
+    overflow: hidden;
+    color: #fff;
+    float: center;
+    background-color: rgb(7, 145, 7);
+}
+.hierarchical_bar ul li{
+    padding: 30 px, 17 px;
+    float: center;
+    width: 165px;
+    margin: 20 px;
+}
+.hierarchical_bar ul li a{
+    
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+}
+.active, .hierarchical_bar ul li:hover{
+    background: rgb(26, 149, 165);
+    border-radius: 5px;
+}
+
+
+.bar{
+    background-color: rgb(94, 93, 89);
+    font-size: 25px;
+    padding: 0px;
+    position: sticky;
+}
+.bar ul {
+    top:0;
+    list-style-type: none;
+    overflow: hidden;
+    background-color: rgb(94, 93, 89);
+}
+.bar ul li{
+    padding: 14px 16px;
+    float: left;
+    color:whitesmoke;
+}
+.bar ul li a{
+    display: block;
+    color:whitesmoke;
+    text-align: center;
+    text-decoration: none;
+}
+
+.bar ul li a:hover{
+    color: rgb(34, 2, 2);
+    background-color:whitesmoke;
+    text-decoration: underline;
+}
+
+.bar ul li a:active{
+    color: rgb(34, 2, 2);
+}
+
+.div1{
+    margin-bottom:20px;
+    font-size: 30px;
+    width: 100%;
+    height:auto;
+
+}
+.left
+{
+    padding: 20px;
+    text-align: center;
+    margin: 40px;
+    margin-bottom:20px;
+}
+.right
+{
+    background-color:rgb(184, 194, 181);
+    border: 1px solid rgb(34, 2, 2);
+    margin-right: 40px;
+    margin-bottom:20px;
+    padding: 20px;
+    text-align: center;
+}
+.right ul{
+    padding:10px;
+}
+.right ul li{
+    list-style-type: none;
+    display : inline;
+    padding: 10px;
+}
+/* offer */
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    
+  }
+.headerl 
+{
+    background-color:rgb(184, 194, 181);
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 15px;
+    font-size: 2rem;
+}
+.headerl p{
+    text-align: center;
+    font-size:2rem;
+    margin-top: 5px;
+    padding: 5px;
+
+}
+.headerl p a{
+    text-decoration: none;
+    background-color: rgb(37, 43, 37);
+    color: white;
+    padding: 10px;
+}
+.headerl p a:hover{
+    text-decoration: underline;
+    background-color: green;
+    color: white;
+    padding: 10px;
+}
+/* right */
+.header2 
+{
+    background-color:rgb(190, 183, 167);
+    margin-right: 20px;
+    margin-bottom: 5px;
+    padding: 15px;
+    font-size: 2rem;
+}
+.header2 p{
+    text-align: center;
+    font-size:2rem;
+    margin-top: 5px;
+    padding: 8px;
+
+}
+.header2 p a{
+    text-decoration: none;
+    background-color: rgb(37, 43, 37);
+    color: white;
+    padding: 10px;
+}
+.header2 p a:hover{
+    text-decoration: underline;
+    background-color: green;
+    color: white;
+    padding: 10px;
+}
+.info
+{
+    list-style-type: disc;
+    margin:40px 60px;
+    border: 30px solid rgb(34, 2, 2);  
+    padding: 40px;
+    font-size: 18px;
+    
+}
+.info ul li{
+    padding: 10px;
+}
+.footer{
+    color: whitesmoke;
+    background-color: rgb(34, 2, 2);
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    padding:15px;
+    letter-spacing: 0.75px;
+}
+
+.sub-menu{
+    display: none;
+}
+.hierarchical_bar ul li:hover .sub-menu{
+    display: block;
+    position: absolute;
+    background: rgb(0,100,0);
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.hierarchical_bar ul li:hover .sub-menu ul{
+    display: block;
+    margin: 2px;
+}
+
+.hierarchical_bar ul li:hover .sub-menu ul li{
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: none;
+    text-align: left;
+
+}
+.hierarchical_bar ul li:hover .sub-menu ul li:last-child{
+    border-bottom: none;
+}
+.hierarchical_bar ul li:hover .sub-menu ul li a:hover{
+    color: #b2ff00;
+}

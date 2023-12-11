@@ -1,0 +1,50 @@
+if($i % 2==0){
+            ?>
+            <div class="headerl">
+            <h1 style="color: black">
+                <?php echo "$name"; ?>
+            </h1>
+            <?php $sourceimage= "/RMS/html-php/uploads/$filenameh"; ?>
+            <a href="/RMS/html-php/booking.php"><img src= <?php echo $sourceimage ?> alt="Offer"></a>
+            <p style="font-size: 25px;text-align: left; padding: 0;margin: 0;"><b>Offer Includes:</b></p>
+                <p style="font-size: 25px;"> <?php echo $details ?> </p> <br/>
+            <p><a href="/RMS/html-php/booking.php">Book Now</a><p>
+            
+            </div>   
+            
+            <?php
+        }else{
+            ?>
+            <div class="header2"> 
+            <h1 style="color: rgb(181,101,29)">
+                <?php echo "$name"; ?>
+            </h1>
+            <?php $sourceimage= "/RMS/html-php/uploads/$filenameh"; ?>
+            <a href="/RMS/html-php/booking.php"><img src= <?php echo $sourceimage ?> alt="Offer"></a>
+            <p style="font-size: 25px;text-align: left; padding: 0;margin: 0;"><b>Offer Includes:</b></p>
+                <p style="font-size: 25px;"> <?php echo $details ?> </p> <br/>
+            <p><a href="/RMS/html-php/booking.php">Book Now</a><p>
+            
+            </div>   
+            
+            <?php
+        }
+
+
+
+//now a query should be checked first that the given input email is in the admin table or not.
+  // if not in the admin table, email to reset password should not be sent. 
+  .. line 12, requestReset.php
+
+  // a query to check data from the checkin table also
+  ... line 61 of checkbookingstatus
+
+
+
+
+
+
+
+
+
+        

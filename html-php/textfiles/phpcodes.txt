@@ -1,0 +1,91 @@
+<?php 
+        include 'connection.php';
+        if($_POST['submit']){
+            $checkindatebnw= $_POST["checkin"];
+            $dtchkin= date_create($checkindatebnw);
+            $checkoutdatebnw= $_POST["checkout"];
+            $dtchkout= date_create($checkoutdatebnw);
+
+            $accomodationtypebn= $_POST["accomodationtypebn"];
+            $accomodationnamebn= $_POST["accomodationnamebn"];
+            $accomodationnumber= $_POST['quantity']; // how many to book now
+            $bill= $_POST["bill"];
+            $nameofUser= $_POST['name'];
+            $email= $_POST['email'] ;
+            $phonenumber=$_POST['phoneno'];
+            // for updating rooms/villas/meeting table
+            //$reserved= ;
+            $queryinsert= "INSERT INTO `booking`(`username`, `email`, `phonenumber`, `checkindate`, 
+            `checkoutdate`, `accomodationtype`, `accomodationname`, `accomodationnumber`, `bookingstatus`, `bill`) 
+            VALUES ('$nameofUser','$email','$phonenumber','$checkindatebnw','$checkoutdatebnw','$accomodationtypebn',
+            '$accomodationnamebn','$accomodationnumber','Reserved',
+            '$bill')";
+
+
+
+            if($accomodationtypebn== "Room"){
+                $queryselectfromdb= "select * from rooms where type= '$accomodationnamebn'";
+                $res= mysqli_query($con, $queryselectfromdb);
+                $num= mysqli_num_rows($res);
+                if($num==1){
+                    while($row= mysqli_fetch_array($res)){
+                        $reservednumberfromdbtoupdate= $row['Reserved'];
+                        $availablenumberfromdbtoupdate= $row['Available'];
+
+                        $updatableavailable= $availablenumberfromdbtoupdate-$accomodationnumber;
+                        $updatablereserved= $reservednumberfromdbtoupdate+ $accomodationnumber;
+
+                        $queryupdate= "UPDATE `rooms` SET `Available`= '$updatableavailable', `Reserved`='$updatablereserved' 
+                        WHERE type= '$accomodationnamebn'";
+                    }
+                }
+            }elseif($accomodationtypebn== "Villa"){
+                $queryselectfromdb= "select * from villas where type= '$accomodationnamebn'";
+                $res= mysqli_query($con, $queryselectfromdb);
+                $num= mysqli_num_rows($res);
+                if($num==1){
+                    while($row= mysqli_fetch_array($res)){
+                        $reservednumberfromdbtoupdate= $row['Reserved'];
+                        $availablenumberfromdbtoupdate= $row['Available'];
+
+                        $updatableavailable= $availablenumberfromdbtoupdate-$accomodationnumber;
+                        $updatablereserved= $reservednumberfromdbtoupdate+ $accomodationnumber;
+
+                        $queryupdate= "UPDATE `villas` SET `Available`= $updatableavailable, `Reserved`=$updatablereserved 
+                        WHERE type= '$accomodationnamebn'";
+                    }
+                }
+            }elseif($accomodationtypebn== "Meeting"){
+                $queryselectfromdb= "select * from meeting where name= '$accomodationnamebn'";
+                $res= mysqli_query($con, $queryselectfromdb);
+                $num= mysqli_num_rows($res);
+                if($num==1){
+                    while($row= mysqli_fetch_array($res)){
+                        $queryupdate= "UPDATE `meeting` SET `Available`= 'No' WHERE name= '$accomodationnamebn'";
+                    }
+                }
+            }
+
+            $insert= mysqli_query($con, $queryinsert);
+            
+            $update= mysqli_query($con, $queryupdate);
+
+            if($insert && $update){ 
+                ?>  <script>
+                     
+                    alert("Hey there! Your input stored & updated!");
+                    window.location.href="sendbookingdetails.php";
+                    
+                    </script> <?php
+                                
+                    //header("Location: https://www.tutorialrepublic.com/faq/how-to-make-a-redirect-in-php.php");
+                    //header don't work here
+            }else{
+                ?>  <script>
+                alert("Error 4040404");
+                </script> <?php
+            }
+            
+        }//post method if condition
+        
+        ?>

@@ -1,4 +1,8 @@
 <?php
+ob_start();
+session_start();
+?>
+<?php
 include 'connection.php';
 error_reporting(0);
 $idq = $_GET['idno'];
@@ -128,4 +132,7 @@ body{
 </body>
 <!-- <textarea name="name" required rows="2" cols="50" ></textarea> -->
 </html>
+<?php
+ob_end_flush();
+?>
 

@@ -12,7 +12,7 @@ RUN mkdir -p /var/www/html
 WORKDIR /var/www/html
 
 # Copy the current directory contents into the container at /var/www/html
-COPY src/ /var/www/html
+COPY . /var/www/html
 
 # Expose port 80 for Apache
 EXPOSE 80

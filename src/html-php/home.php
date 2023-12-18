@@ -73,7 +73,7 @@
    <div class="div1">
         <div class="left">
             <h3>Feel luxury and peace in</h3> <br>
-            <h3>TUSTI RESORT</h3>
+            <h3>"TUSTI RESORT"</h3>
         </div> 
         <div class="right">
             <h4>ADDED ATTRACTIONS!!!</h4>

@@ -93,7 +93,6 @@ session_start();
     $database = "rms";
     
         $con = mysqli_connect($server,$username,$password,$database);
-        session_start();
         if($con){
                 if(isset($_POST["checkbutton"])){ // if the button pressed
                     $checkin = $_POST["check-in"];  // these information are collected from the webpage form
